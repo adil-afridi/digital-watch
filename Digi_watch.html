@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital_Watch</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="c_container">
+        <span class="hr"></span>
+        <span class="min"></span>
+        <span class="sc"></span>
+        <label for="" class="am_pm"></label>
+    </div>
+
+
+    <script>
+
+
+
+        setInterval(() => {
+
+            var hr = document.querySelector(".hr")
+            var min = document.querySelector(".min")
+            var sc = document.querySelector(".sc")
+            var am_pm = document.querySelector(".am_pm")
+
+
+            var time = new Date();
+
+            var hours = time.getHours()
+            var minutes = time.getMinutes()
+            var seconds = time.getSeconds()
+
+
+
+            if (hours >= 12) {
+                var ampm = "pm";
+            }
+            else {
+                var ampm = "am";
+            }
+             am_pm.innerHTML = ampm;
+
+
+            if (hours > 12) {
+                hours = hours - 12
+                hours = '0' + hours
+            }
+
+
+            if (minutes < 10) {
+                minutes = "0" + minutes
+            }
+             min.innerHTML = minutes
+
+            if (seconds < 10) {
+                seconds = "0" + seconds
+            }
+             sc.innerHTML = seconds
+
+
+
+
+        });
+
+
+
+    </script>
+</body>
+
+</html>
